@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="151" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-iM-nJE">
+                                <rect key="frame" x="31" y="514" width="259" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-qM-hw2">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
+                                        <state key="normal" title="Image 1"/>
+                                        <connections>
+                                            <action selector="walking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUg-kL-dJj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-a5-NtV">
+                                        <rect key="frame" x="204" y="0.0" width="55" height="30"/>
+                                        <state key="normal" title="Image 2"/>
+                                        <connections>
+                                            <action selector="walking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Hd-KB-zaY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cristopher Walken Complete Photo Anthology" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-SQ-6JP">
+                                <rect key="frame" x="16" y="52" width="288" height="49"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="37"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portrait" translatesAutoresizingMaskIntoConstraints="NO" id="iiV-5z-vJV">
+                                <rect key="frame" x="-108" y="143" width="537" height="282"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christopher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-21-9fM">
+                                <rect key="frame" x="0.0" y="473.5" width="320" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q1z-iM-nJE" secondAttribute="bottom" constant="24" id="04h-ml-pLu"/>
+                            <constraint firstItem="Q1z-iM-nJE" firstAttribute="top" secondItem="O7e-21-9fM" secondAttribute="bottom" constant="14" id="7h5-3e-bfq"/>
+                            <constraint firstItem="8ap-SQ-6JP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="8A5-Es-tBR"/>
+                            <constraint firstItem="8ap-SQ-6JP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IFw-lc-XoQ"/>
+                            <constraint firstItem="O7e-21-9fM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" priority="750" constant="300" id="S1m-Q6-J7D"/>
+                            <constraint firstItem="O7e-21-9fM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZvI-hb-BxJ"/>
+                            <constraint firstItem="Q1z-iM-nJE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="arq-gr-oMu"/>
+                            <constraint firstItem="O7e-21-9fM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lxt-Rc-ATd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ap-SQ-6JP" secondAttribute="trailing" constant="16" id="rg8-DZ-Ww0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageChange" destination="iiV-5z-vJV" id="8A4-8C-xLW"/>
+                        <outlet property="message" destination="O7e-21-9fM" id="C6y-uJ-xdO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="133.09859154929578"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="portrait" width="1848" height="963"/>
+    </resources>
+</document>
