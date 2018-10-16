@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         imageLocation = userTouch.location(in: colorWheel)
         selector.center = touchLocation
         color = image?.getPixelColor(pos: imageLocation)
+        print(imageLocation)
         colorBar.backgroundColor = color
         colorLabel.text = colorString
     }
@@ -64,8 +65,8 @@ extension UIImage {
         let pixelData = self.cgImage!.dataProvider!.data
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
         
-        let xAdjust = (pos.x) * 5.79710144928
-        let yAdjust = (pos.y) * 5.79710144928
+        let xAdjust = (pos.x) * 6.77966101695
+        let yAdjust = (pos.y) * 6.77966101695
         
 //        print(xAdjust)
 //        print(yAdjust)
