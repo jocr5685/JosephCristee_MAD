@@ -7,6 +7,8 @@
 //
 
 import UIKit
+var colorString : String = "rgba"
+
 
 class ViewController: UIViewController {
 
@@ -17,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorWheel: UIImageView!
     
     @IBOutlet weak var selector: UIImageView!
+    @IBOutlet weak var colorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,36 +36,36 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         var userTouch : UITouch! =  touches.first! as UITouch
         touchLocation = userTouch.location(in: self.view)
-//        let newCoordinate = self.view.convert(touchLocation, to: colorWheel)
+        imageLocation = userTouch.location(in: colorWheel)
         selector.center = touchLocation
-        color = image?.getPixelColor(pos: touchLocation)
+        color = image?.getPixelColor(pos: imageLocation)
         colorBar.backgroundColor = color
-        print(touchLocation)
-        print("break")
-//        print(imageLocation)
-
+        colorLabel.text = colorString
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         var userTouch : UITouch! =  touches.first! as UITouch
         touchLocation = userTouch.location(in: self.view)
+        imageLocation = userTouch.location(in: colorWheel)
         selector.center = touchLocation
-        color = image?.getPixelColor(pos: touchLocation)
+        color = image?.getPixelColor(pos: imageLocation)
         colorBar.backgroundColor = color
-        //print(touchLocation)
+        colorLabel.text = colorString
 
     }
     
 }
 
 //let image = UIImage(named:"AppColorWheel.png")
+//Adapted from https://stackoverflow.com/questions/50623967/swift-4-get-rgb-values-of-pixel-in-uiimage
+
 extension UIImage {
     func getPixelColor(pos: CGPoint) -> UIColor {
         let pixelData = self.cgImage!.dataProvider!.data
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
         
-        let xAdjust = (pos.x) * (16/3)
-        let yAdjust = (pos.y - 186.5) * 5.79710144928
+        let xAdjust = (pos.x) * 5.79710144928
+        let yAdjust = (pos.y) * 5.79710144928
         
 //        print(xAdjust)
 //        print(yAdjust)
@@ -70,10 +73,17 @@ extension UIImage {
         let pixelInfo: Int = ((Int(self.size.width) * Int(yAdjust)) + Int(xAdjust)) * 4
         
         let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let rFormat = Int(data[pixelInfo])
         let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let gFormat = Int(data[pixelInfo+1])
         let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let bFormat = Int(data[pixelInfo+2])
         let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+        let aFormat = Int(data[pixelInfo+3])
+
+        colorString = "rgba(" + rFormat.description + ", " + gFormat.description + ", " + bFormat.description + ", " + aFormat.description + ")"
         return UIColor(red: r, green: g, blue: b, alpha: a)
+        
     }
 }
 let image = UIImage(named:"AppColorWheel.png")
